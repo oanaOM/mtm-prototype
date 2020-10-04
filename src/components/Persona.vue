@@ -4,10 +4,14 @@
     <!-- persona profile body -->
     <div class="profile">
       <div class="profile-header">
-        <div class="persona-icon"
+        <div
+          class="persona-icon"
           :style="{ backgroundColor: profileData.details.color }"
         >
-          <i class="fas fa-user-astronaut" style="font-size:2rem;padding-top:10px;"></i>
+          <i
+            class="fas fa-user-astronaut"
+            style="font-size:2rem;padding-top:10px;"
+          ></i>
         </div>
         <div class="persona-name">
           <label for="persona_name" class="persona-label">Persona name </label>
@@ -48,7 +52,7 @@
 <script>
 import Board from "./Board.vue";
 import Elements from "./Elements.vue";
-import {updateName} from '@/functions/helpers';
+import { updateName } from "@/functions/helpers";
 
 export default {
   props: ["profileData"],
@@ -62,19 +66,18 @@ export default {
     };
   },
   created() {
-    this.tempValue = this.$props.profileData.details.initials
+    this.tempValue = this.$props.profileData.details.initials;
   },
   methods: {
-    onEditName(e){
-     updateName(e)
-    }
+    onEditName(e) {
+      updateName(e);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/_utils.scss";
-
 
 .container {
   margin-top: $header-height;

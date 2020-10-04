@@ -31,17 +31,17 @@ const mutations = {
       ". Preview data: ",
       fieldObjData
     );
-   },
-  UPDATE_INITIAL_NAME(state, payload) { 
-    state.details.name = payload
   },
-  UPDATE_INITIAL_SHORTNAME(state, payload) { 
-    state.details.initials = payload
+  UPDATE_INITIAL_NAME(state, payload) {
+    state.details.name = payload;
   },
-  DELETE_FIELD(state, payload) { 
-   const fieldObj = state.fields.find(field => field.id == payload.id);
-   state.fields.splice(state.fields.indexOf(fieldObj), 1);
-  }
+  UPDATE_INITIAL_SHORTNAME(state, payload) {
+    state.details.initials = payload;
+  },
+  DELETE_FIELD(state, payload) {
+    const fieldObj = state.fields.find((field) => field.id == payload.id);
+    state.fields.splice(state.fields.indexOf(fieldObj), 1);
+  },
 };
 const actions = {
   async getPersonaData({ commit }) {
@@ -56,9 +56,11 @@ const actions = {
       const fields = await axios.get(
         `https://private-anon-9e76616a96-smaplypersonastest.apiary-mock.com/personas/${personaID}/fields`
       );
-     
+
       commit("UPDATE_PERSONA_DETAILS", details.data);
-      columns.data.forEach((column) => commit("UPDATE_PERSONA_COLUMNS", column));
+      columns.data.forEach((column) =>
+        commit("UPDATE_PERSONA_COLUMNS", column)
+      );
       fields.data.forEach((field) => commit("UPDATE_PERSONA_FIELDS", field));
     } catch (err) {
       console.error(err);
@@ -68,21 +70,21 @@ const actions = {
     commit("UPDATE_PERSONA_FIELDS", payload);
     console.log("Total fields ", state.fields);
   },
-  updateFieldData({ commit }, payload) { 
-    commit("UPDATE_FIELD_DATA", payload)
+  updateFieldData({ commit }, payload) {
+    commit("UPDATE_FIELD_DATA", payload);
   },
-  deleteField({ commit }, payload) { 
-    commit('DELETE_FIELD', payload)
+  deleteField({ commit }, payload) {
+    commit("DELETE_FIELD", payload);
     console.log("DELTE FIELDS", payload);
   },
-  updateProfileDetails({ commit }, payload) { 
+  updateProfileDetails({ commit }, payload) {
     commit("UPDATE_INITIAL_NAME", payload.name);
     commit("UPDATE_INITIAL_SHORTNAME", payload.initials);
     console.log("Persona name and shortname has been updated: ", payload);
-  }
+  },
 };
 const getters = {
-  profileData: state => state
+  profileData: (state) => state,
 };
 
 const profileModule = {

@@ -53,7 +53,8 @@ export default {
         },
         {
           field_type: "long_text",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           icon: "",
         },
         {

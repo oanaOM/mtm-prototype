@@ -15,7 +15,9 @@
 
     <div class="toolbar">
       <div class="toolbar-link" v-for="tool in tools" :key="tool.name">
-        <button @click="updatePersonaProfile"><i :class="tool.fontAwesomIcon"></i></button>
+        <button @click="updatePersonaProfile">
+          <i :class="tool.fontAwesomIcon"></i>
+        </button>
         <div>{{ tool.name }}</div>
       </div>
     </div>
@@ -23,10 +25,10 @@
 </template>
 
 <script>
-import {updateName} from '@/functions/helpers';
+import { updateName } from "@/functions/helpers";
 
 export default {
-  props:['personaName'],
+  props: ["personaName"],
   data() {
     return {
       tools: [
@@ -36,36 +38,34 @@ export default {
         { fontAwesomIcon: "far fa-copy", name: "Duplicate" },
         { fontAwesomIcon: "fas fa-arrow-right", name: "Move" },
         { fontAwesomIcon: "fas fa-question-circle", name: "Help" },
-        { fontAwesomIcon: "fas fa-ellipsis-h", name: "More actions" }
-      ]
+        { fontAwesomIcon: "fas fa-ellipsis-h", name: "More actions" },
+      ],
     };
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
-    editName(e){
-      e.target.style.backgroundColor = e.target.value.length === 0 ? "red" : "inherit";
+    editName(e) {
+      e.target.style.backgroundColor =
+        e.target.value.length === 0 ? "red" : "inherit";
       e.target.style.width = e.target.value.length + "ch";
       updateName(e);
     },
-    updatePersonaProfile(){
+    updatePersonaProfile() {
       // TO BE ADDED
-    }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 header {
   color: #3c4646;
   font-size: 1.5rem;
   background-color: $light-gray;
   background: linear-gradient(180deg, #ffffff 0, $light-gray 100%);
   padding: 15px 26px;
-  @media (max-width: $small-device-screen) { 
-      padding: 15px;
+  @media (max-width: $small-device-screen) {
+    padding: 15px;
   }
   position: fixed;
   top: 0;
@@ -112,13 +112,13 @@ header {
       font-size: 12px;
       letter-spacing: 0;
       line-height: 8px;
-      @media (max-width: $small-device-screen) { 
-        margin:0 10px;
+      @media (max-width: $small-device-screen) {
+        margin: 0 10px;
       }
       margin: 0 20px;
       button {
-        background-color:inherit;
-        border:none;
+        background-color: inherit;
+        border: none;
         font-size: 20px;
         margin-bottom: 5px;
         color: $very-dark-grayish-cyan;
