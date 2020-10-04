@@ -1,0 +1,22 @@
+.persona-label {
+    display: block;
+    text-transform: uppercase;
+    color: $light-label-gray;
+    font-family: $main-font-family;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.persona-input {
+    border: none;
+    background-color: inherit;
+    color: $dark-gray;
+    font-family: $main-font-family;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    max-width: 100%;
+    width: 100%;
+}

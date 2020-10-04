@@ -1,0 +1,31 @@
+.field {
+    height: 112px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #ffffff;
+    text-align: center;
+    font-family: $main-font-family;
+
+    &-icon,
+    &-text {
+        color: #b1b6b6;
+        padding: 23px;
+        font-size: 43px;
+        line-height: 1;
+    }
+
+    &:nth-child(2) {
+        font-size: 20px;
+    }
+
+    &-type {
+        color: $very-dark-grayish-cyan;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 8px;
+        text-align: center;
+        text-transform: uppercase;
+        bottom: 0;
+    }
+}
