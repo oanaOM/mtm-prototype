@@ -80,16 +80,13 @@ export default {
 @import "../styles/_utils.scss";
 
 .container {
-  margin-top: $header-height;
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
+  margin-top: $header-height + 30px;
+  margin-right: 380px;
 
   .profile {
     width: 700px;
     margin-top: 30px;
     margin: auto;
-    margin-top: 30px;
     left: 0;
     right: 0;
   }
