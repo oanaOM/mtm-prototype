@@ -12,7 +12,7 @@ The user is able to edit his name, initials and build his profile using field el
 - [Sass-loader package](https://www.npmjs.com/package/sass-loader): used to load Sass and compile in CSS.
 - [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API): used to create the drag and drop effect.
 
-# Components
+### Vue Components
 
 - App: parent container 
 - Toolbar: shows persons's details 
