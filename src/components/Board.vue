@@ -59,13 +59,19 @@ export default {
     onDrop(evt, column_id) {
       const field_data = evt.dataTransfer.getData("field_id");
       const { field_type, data } = JSON.parse(field_data);
-      let field_id = this.$props.fields.length + 1;
+      const storeFieldsLength = this.$props.fields.length
+
+      // get the id of the last item in store fields
+      let field_id = this.$props.fields[storeFieldsLength-1].id + 1;
+      const prevID = this.$props.fields.filter(field=>field.column_id==column_id)
 
       let body = {
         column_id: column_id,
         data: data,
         field_type: field_type,
         id: field_id,
+        next_id: 0,
+        prev_id: prevID.length > 0 ? prevID[prevID.length-1].id : 0,
         title: field_type.replace("_", " "),
       };
       console.log(

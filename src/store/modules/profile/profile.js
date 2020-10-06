@@ -29,7 +29,7 @@ const mutations = {
       " has been updated with data",
       payload.data,
       ". Preview data: ",
-      fieldObjData
+      fieldObjData.column_id.column_id
     );
   },
   UPDATE_INITIAL_NAME(state, payload) {
