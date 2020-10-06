@@ -1,8 +1,13 @@
 # Smaply Prototype
 
-A persona profil prototype site built as a single-page app using [VueJs](https://vuejs.org/). All the data if fed from [Smaply Persona Test API](https://smaplypersonastest.docs.apiary.io).
+A persona profil prototype site built as a single-page app using [VueJs](https://vuejs.org/). 
 
-The user is able to edit his name, initials and build his profile using field elements from the right panel by performing a drag and drop action on his profile board. Within his profile he can also drag and drop fields from left and right or delete them.
+### Overview
+
+The entry point of the application is in App.vue component.
+Once the App.vue component is loaded, a dispath is made using vuex store to fetch the data from the API. Using the stored data Toolbar and Persona components are populated. More details are described in the workflow diagram below:
+
+<img src="./application workflow.png" raw=true alt="workflow"/>
 
 ## Technologies
 
@@ -12,14 +17,6 @@ The user is able to edit his name, initials and build his profile using field el
 - [Sass-loader package](https://www.npmjs.com/package/sass-loader): used to load Sass and compile in CSS.
 - [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API): used to create the drag and drop effect.
 
-### Vue Components
-
-- App: parent container 
-- Toolbar: shows persons's details 
-- Persona: displays the profile of the persona 
-- Board: lists all the fields that compose the profile 
-- Field: displays a single field on profile 
-- Elements: displayes a list of all fields 
 
 ## Project setup
 
